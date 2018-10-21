@@ -32,3 +32,4 @@ UserSchema.pre("update",function(next){
 })
 
 module.exports = mongoose.model("User",UserSchema);
+module.exports = mongoose.model("Job",JobSchema);

@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET index page. */
+/* GET Positions Page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Mini Project index page' });
+  res.render('position', { title: 'positions page' });
 });
 
 module.exports = router;

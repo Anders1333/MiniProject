@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const expect = require("chai").expect;
 const dbSetup = require("..//dbSetup");
 
-//https://github.com/Automattic/mongoose/issues/1251
+
 mongoose.models = {};
 mongoose.modelSchemas = {};
 mongoose.connection = {};
 
-var userFacade = require("../facades/userFacade");
+var userFacade = require("../facades/userFacade.js");
 var User = require("../models/user");
 
 let connection = null;

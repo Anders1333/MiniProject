@@ -1,18 +1,23 @@
 var mongoose = require("mongoose");
-var User = require("../models/user");
+var User = require("../models/User");
+var Job = require("../models/User");
+
 
 function getAllUsers() {
   return User.find({}).exec();
 }
 
-function addUser(firstName, lastName, userName, password, email) {
-  //TBD -- Should make the test fail
-  return null;
+function addUser(firstName, lastName, userName, password, email, type, company, companyUrl) {
+  var jobDetail = {type,company,companyUrl}
+  var job = new Job(jobDetail);
+  var userDetail = { userName, firstName, lastName, password,email, job };
+  var user = new User(userDetail);
+  return user.save();
 }
+ 
 
-function findByUsername(username) {
-  //TBD -- Should make the test fail
-  return null;
+function findByUsername(username){
+  return User.findByUsername({ _userName:username }).exec();
 }
 
 function findById(id) {
